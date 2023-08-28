@@ -153,7 +153,9 @@ class _SignauxState extends State<Signaux> {
   }
 
   // ignore: non_constant_identifier_names
-  Padding NavBottons(Size size) {
+  Padding NavBottons(
+    Size size,
+  ) {
     return Padding(
       padding:
           const EdgeInsets.only(left: 30.0, top: 10, right: 40.0, bottom: 10),
@@ -162,39 +164,56 @@ class _SignauxState extends State<Signaux> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-              padding: const EdgeInsets.all(5), child: NavBottonsItem(size)),
+              padding: const EdgeInsets.all(5),
+              child: NavBottonsItem(
+                size,
+                Icon(
+                  Icons.category,
+                  color: MyApp.colors.greycolor,
+                ),
+              )),
           Padding(
-              padding: const EdgeInsets.all(5), child: NavBottonsItem(size)),
+              padding: const EdgeInsets.all(5),
+              child: NavBottonsItem(
+                size,
+                Icon(
+                  Icons.bolt,
+                  color: MyApp.colors.greycolor,
+                ),
+              )),
           Padding(
-              padding: const EdgeInsets.all(5), child: NavBottonsItem(size)),
+              padding: const EdgeInsets.all(5),
+              child: NavBottonsItem(
+                size,
+                Icon(
+                  Icons.pinch,
+                  color: MyApp.colors.greycolor,
+                ),
+              )),
         ],
       ),
     );
   }
 
   // ignore: non_constant_identifier_names
-  InkWell NavBottonsItem(Size size) => InkWell(
+  InkWell NavBottonsItem(Size size, Icon icon) => InkWell(
         onTap: () {},
         child: Container(
-          width: size.height * .4 * 3 / 14 - 10,
-          height: size.height * .4 * 3 / 14,
-          decoration: BoxDecoration(
-            color: MyApp.colors.goldcolor,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: const Offset(0, 3), // changes position of shadow
-              ),
-            ],
-          ),
-          child: Icon(
-            Icons.category,
-            color: MyApp.colors.greycolor,
-          ),
-        ),
+            width: size.height * .4 * 3 / 14 - 10,
+            height: size.height * .4 * 3 / 14,
+            decoration: BoxDecoration(
+              color: MyApp.colors.goldcolor,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: const Offset(0, 3), // changes position of shadow
+                ),
+              ],
+            ),
+            child: icon),
       );
 
   Widget buildList() => ListView.builder(

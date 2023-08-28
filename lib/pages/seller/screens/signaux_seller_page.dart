@@ -164,18 +164,39 @@ class SignauxSeller extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-              padding: const EdgeInsets.all(5), child: NavBottonsItem(size)),
+              padding: const EdgeInsets.all(5),
+              child: NavBottonsItem(
+                size,
+                Icon(
+                  Icons.category,
+                  color: MyApp.colors.greycolor,
+                ),
+              )),
           Padding(
-              padding: const EdgeInsets.all(5), child: NavBottonsItem(size)),
+              padding: const EdgeInsets.all(5),
+              child: NavBottonsItem(
+                size,
+                Icon(
+                  Icons.bolt,
+                  color: MyApp.colors.greycolor,
+                ),
+              )),
           Padding(
-              padding: const EdgeInsets.all(5), child: NavBottonsItem(size)),
+              padding: const EdgeInsets.all(5),
+              child: NavBottonsItem(
+                size,
+                Icon(
+                  Icons.pinch,
+                  color: MyApp.colors.greycolor,
+                ),
+              )),
         ],
       ),
     );
   }
 
   // ignore: non_constant_identifier_names
-  InkWell NavBottonsItem(Size size) => InkWell(
+  InkWell NavBottonsItem(Size size, Icon icon) => InkWell(
         onTap: () {},
         child: Container(
           width: size.height * .4 * 3 / 14 - 10,
@@ -192,10 +213,7 @@ class SignauxSeller extends StatelessWidget {
               ),
             ],
           ),
-          child: Icon(
-            Icons.category,
-            color: MyApp.colors.greycolor,
-          ),
+          child: icon,
         ),
       );
 

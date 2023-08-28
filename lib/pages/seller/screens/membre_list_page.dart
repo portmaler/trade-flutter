@@ -6,6 +6,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:trade_app1/controllers/Seller/user_seller_controller.dart';
 import 'package:trade_app1/main.dart';
 import 'package:trade_app1/pages/seller/forms/add_user.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class MembresPage extends StatelessWidget {
   MembresPage({Key? key}) : super(key: key);
@@ -52,7 +53,50 @@ class MembresPage extends StatelessWidget {
           children: [
             Expanded(
               flex: 3,
-              child: Container(),
+              child: Column(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Container(),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                            width: size.width * .7,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 30.0,
+                                  top: 10.0,
+                                  right: 40.0,
+                                  bottom: 10.0),
+                              child: AutoSizeText(
+                                "Signaux",
+                                style: TextStyle(
+                                    color: MyApp.colors.goldcolor,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 50),
+                              ),
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset("assets/signal.png"),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        )
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                      flex: 3,
+                      child: Container(
+                        height: 100,
+                      ))
+                ],
+              ),
             ),
             Expanded(
               flex: 5,

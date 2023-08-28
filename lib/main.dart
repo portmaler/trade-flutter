@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:trade_app1/controllers/States/authentification_controoler.dart';
 import 'package:trade_app1/controllers/States/language_controller.dart';
+import 'package:trade_app1/pages/authentication/auth.dart';
 import 'package:trade_app1/utils/helpers/bindinggetx.dart';
 import 'package:trade_app1/utils/theme/themes.dart';
 
@@ -21,15 +23,14 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]).then((value) => runApp(const MyApp()));
   Get.put<LanguageToggleController>(LanguageToggleController());
+   Get.put<AuthenticationController>(AuthenticationController());
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const colors =  AppColors() ;
-
-
+  static const colors = AppColors();
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +51,8 @@ class MyApp extends StatelessWidget {
       darkTheme: MyThemes.darkTheme,
 
       // initialBinding: AppBinding(),
-
-      home: CustomHome(),
+      home: Authent(),
+      //home: CustomHome(),
     );
   }
 }
@@ -68,5 +69,5 @@ class AppColors {
   final bluecolortext = const Color(0xFF13315c);
   final bluecolor = const Color(0xFF2ec4b6);
 
- const AppColors();
+  const AppColors();
 }

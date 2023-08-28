@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:trade_app1/controllers/States/bottom_navbar_controller.dart';
 import 'package:trade_app1/controllers/Seller/buttom_navbar_seller_controller.dart';
 import 'package:trade_app1/main.dart';
+import 'package:trade_app1/pages/authentication/auth.dart';
 import 'package:trade_app1/pages/custumer/screens/profil_page2.dart';
 import 'package:trade_app1/pages/seller/screens/membre_list_page.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -64,7 +65,7 @@ class SellerHome extends StatelessWidget {
                             width: 40,
                             child: MaterialButton(
                               onPressed: () {
-                                Get.to(() => SellerHome());
+                                Get.to(() => Authent());
                               },
                               child: Icon(
                                 Icons.logout,

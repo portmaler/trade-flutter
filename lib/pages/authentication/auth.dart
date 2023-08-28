@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:trade_app1/controllers/States/authentification_controoler.dart';
 import 'package:trade_app1/main.dart';
+import 'package:trade_app1/pages/seller/screens/home_page_seller.dart';
 
 import '../custumer/screens/formation_categorie_page.dart';
 
@@ -11,6 +13,8 @@ class Authent extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passworldController = TextEditingController();
 
+  final AuthenticationController authController =
+      Get.find<AuthenticationController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +60,28 @@ class Authent extends StatelessWidget {
                           ]),
                     ),
                     SizedBox(height: 35),
-                    logButton(context, "S'authentifier"),
+                    Row(
+                      children: [
+                        GetBuilder<AuthenticationController>(
+                            builder: (controller) {
+                          return Checkbox(
+                            value: authController.isAdminChecked,
+                            onChanged: (bool? value) {
+                              authController.changeState(value!);
+                            },
+                          );
+                        }),
+                        Text(
+                          "Admin",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 35),
+                    logButton(context, "S'authentifier", authController),
                     SizedBox(height: 40),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +111,8 @@ class Authent extends StatelessWidget {
     );
   }
 
-  Material logButton(BuildContext context, String text) {
+  Material logButton(
+      BuildContext context, String text, AuthenticationController controller) {
     return Material(
       elevation: 8,
       borderRadius: BorderRadius.circular(15),
@@ -94,7 +120,11 @@ class Authent extends StatelessWidget {
       child: MaterialButton(
         padding: EdgeInsets.fromLTRB(30, 12, 30, 18),
         onPressed: () {
-          Get.to(CustomHome());
+          if (controller.isAdminChecked) {
+            Get.to(SellerHome());
+          } else {
+            Get.to(CustomHome());
+          }
         },
         child: Text(
           text,

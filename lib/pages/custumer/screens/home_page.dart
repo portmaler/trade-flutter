@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:trade_app1/controllers/States/bottom_navbar_controller.dart';
 import 'package:trade_app1/main.dart';
 import 'package:trade_app1/pages/Seller/screens/home_page_seller.dart';
+import 'package:trade_app1/pages/authentication/auth.dart';
 import 'abonnement_page.dart';
 import 'formation_page.dart';
 import 'historique_paiement.dart';
@@ -55,7 +56,7 @@ class CustomHome extends StatelessWidget {
                             width: 40,
                             child: MaterialButton(
                               onPressed: () {
-                                Get.to(() => SellerHome());
+                                Get.to(() => Authent());
                               },
                               child: Icon(
                                 Icons.logout,
