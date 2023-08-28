@@ -1,16 +1,17 @@
-# trade_app1
+# Trading Forex Application
 
-A new Flutter project.
+Welcome to the Trading Forex Application! This Flutter app provides users with forex insights, educational resources, and the ability to access trading formations. It also includes an admin flow for managing users and providing access to educational content.
+
+## Features
+
+- **User Features:**
+  - Get forex insights and information.
+  - Access trading formations and educational resources.
+  
+- **Admin Features:**
+  - Add and manage users.
+  - Manage access to educational content.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+These instructions will help you get the project up and running on your local machine for development and testing purposes.
